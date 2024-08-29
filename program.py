@@ -33,7 +33,6 @@ def delete_mongo(nombre):
     result = collection_mongo.delete_one(filter)
     print('Documentos eliminados:', result.deleted_count)
 
-          
 #creación de la connexion (variables de conexión) 
 def connection():
     return mysql.connector.connect(
@@ -156,7 +155,7 @@ def leer_datos_mongo():
         elif(selection == 4):
             nombre= input("ingrese el nombre del usuario")
             delete_mongo(nombre)
-    
+
         selection = int(input("selecciona una accion \n 1) Crear usuario \n 2) Ver usuario \n 3) actualizar usuario \n 4) Borrar usuario \n 0) Salir \n"))
 
 #llamado de cada base de datos
@@ -166,7 +165,6 @@ if(selection==1):
 elif(selection == 2):
     leer_datos_mongo()
 #cerrar la conexion a la base de datos al termianr los procesos
-
 
 con = connection()
 con.close()
